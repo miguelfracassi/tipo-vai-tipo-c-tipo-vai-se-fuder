@@ -1,0 +1,62 @@
+/* =========================================================
+   TICORD — estilos extras do sistema de equipe
+   (inscrição + painel /formsadm)
+   Arquivo à parte: não mexe em css/style.css. Só usa as
+   mesmas variáveis (--black, --navy, --green, etc.) já
+   definidas lá, então precisa ser carregado depois dele.
+   ========================================================= */
+
+/* ---------- Página de inscrição ---------- */
+.team-hero { padding: 64px 0 8px; }
+.team-hero h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); }
+.team-hero .lead { margin-top: 16px; max-width: 62ch; }
+
+.team-roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 28px 0 8px; max-width: 68ch; }
+.team-role-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--navy); padding: 20px 22px; }
+.team-role-card h3 { font-size: 1rem; color: var(--green); margin-bottom: 6px; }
+.team-role-card p { color: var(--mute); font-size: 0.92rem; }
+
+.team-wrap { max-width: 560px; margin: 0 auto; padding: 40px 0 100px; }
+.team-form-box { border: 1px solid var(--line); border-radius: var(--radius); background: var(--navy); padding: 32px; }
+
+/* Reaproveita .auth-field (definido em style.css), mas ele só estiliza
+   <input>. Aqui estendemos para <select> e <textarea>. */
+.auth-field select,
+.auth-field textarea {
+  width: 100%; padding: 12px 14px; background: var(--black); border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm); color: var(--white); font: inherit; font-size: 1rem;
+}
+.auth-field select:focus,
+.auth-field textarea:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+.auth-field textarea { resize: vertical; min-height: 110px; }
+.auth-field .hint { color: var(--mute); font-size: 0.8rem; }
+
+.team-success { display: grid; gap: 14px; text-align: center; padding: 12px 0; }
+.team-success .check {
+  width: 56px; height: 56px; margin: 0 auto; border-radius: 50%;
+  background: var(--green); color: var(--on-green); font-size: 1.6rem;
+  display: grid; place-items: center;
+}
+.team-success h2 { font-size: 1.5rem; }
+.team-success p { color: var(--mute); }
+
+/* ---------- Painel /formsadm ---------- */
+.fa-panel { padding: 28px 0 90px; }
+.fa-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.fa-count { color: var(--mute); font-size: 0.92rem; }
+.fa-empty { color: var(--mute); padding: 40px 0; text-align: center; }
+
+.fa-list { display: grid; gap: 14px; }
+.fa-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--navy); padding: 20px 22px; display: grid; gap: 10px; }
+.fa-card-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.fa-name { font-size: 1.08rem; font-weight: 600; }
+.fa-badge { display: inline-flex; padding: 4px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; background: var(--navy-soft); color: var(--green); border: 1px solid var(--line-strong); white-space: nowrap; }
+.fa-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--mute); font-size: 0.88rem; }
+.fa-meta a { color: var(--mute); }
+.fa-meta a:hover { color: var(--green); }
+.fa-exp { color: var(--white); font-size: 0.92rem; line-height: 1.55; white-space: pre-wrap; }
+.fa-date { color: var(--mute); font-size: 0.78rem; }
+
+@media (max-width: 560px) {
+  .team-form-box { padding: 24px 18px; }
+}
