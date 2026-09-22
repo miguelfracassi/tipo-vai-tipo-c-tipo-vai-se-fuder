@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel de chats</title>
+<link rel="icon" href="assets/ticord.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Página escondida: não está no menu, no rodapé nem em nenhuma outra página -->
+<header class="site-header is-scrolled">
+  <div class="container header-inner">
+    <span class="brand"><img src="assets/ticord.png" alt="Ticord"></span>
+    <button type="button" class="auth-btn" id="t-exit" hidden>Sair do painel</button>
+  </div>
+</header>
+
+<main class="tm">
+  <div class="container">
+
+    <!-- 1. Chave de acesso -->
+    <section id="t-lock" class="tm-lock">
+      <h1>Acesso da equipe</h1>
+      <p class="lead chat-lead">Digite a chave de acesso para ver os chats.</p>
+      <form id="t-keyform" class="auth-form" novalidate>
+        <label class="auth-field">Chave de acesso
+          <input id="t-key" name="key" type="password" autocomplete="off" required>
+        </label>
+        <p class="auth-msg" id="t-keymsg" role="alert"></p>
+        <button type="submit" class="btn btn-primary" id="t-go">Entrar</button>
+      </form>
+    </section>
+
+    <!-- 2. Painel -->
+    <section id="t-panel" class="tm-panel" hidden>
+      <div class="tm-top">
+        <div class="tm-state">
+          <span class="chat-dot" id="t-dot"></span>
+          <span id="t-online">Conectando…</span>
+        </div>
+        <p class="tm-count" id="t-count"></p>
+      </div>
+      <p class="tm-banner" id="t-banner" role="alert" hidden></p>
+
+      <div class="tm-grid" id="t-grid">
+        <aside class="tm-list" id="t-list" aria-label="Lista de chats"></aside>
+
+        <div class="tm-thread">
+          <div class="tm-empty" id="t-empty">
+            <p id="t-empty-text">Nenhum chat por enquanto. Quando um cliente iniciar um pedido, ele aparece aqui na hora.</p>
+          </div>
+
+          <div class="tm-body" id="t-body" hidden>
+            <div class="tm-head">
+              <button type="button" class="btn btn-ghost btn-sm tm-back" id="t-back">Voltar</button>
+              <div class="tm-head-info">
+                <p class="chat-title" id="t-hname"></p>
+                <p class="chat-status" id="t-hmeta"></p>
+              </div>
+              <button type="button" class="btn btn-ghost btn-sm btn-end" id="t-end">Finalizar chat</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="t-remove" hidden>Remover da lista</button>
+            </div>
+
+            <div class="chat-log" id="t-log" role="log" aria-live="polite" aria-label="Mensagens do chat"></div>
+
+            <form class="chat-compose" id="t-form" autocomplete="off">
+              <textarea class="chat-input" id="t-input" rows="1" maxlength="2000" placeholder="Escreva sua resposta" aria-label="Sua resposta"></textarea>
+              <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+            </form>
+            <p class="chat-over" id="t-over" hidden>Este chat foi finalizado. Ele some quando você recarregar ou sair do painel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="js/chat-core.js"></script>
+<script src="js/chatteam.js"></script>
+<script src="js/interact.js"></script>
+</body>
+</html>

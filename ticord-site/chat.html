@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pedido de suporte — Ticord</title>
+<link rel="icon" href="assets/ticord.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Ticord — página inicial">
+      <img src="assets/ticord.png" alt="Ticord">
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="apoio.html">Apoio</a>
+    </nav>
+    <div class="auth-slot" data-auth-slot></div>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Início</a>
+  <a href="sobre.html">Sobre</a>
+  <a href="projetos.html">Projetos</a>
+  <a href="apoio.html">Apoio</a>
+</div>
+
+<main class="chat-app">
+  <div class="container chat-wrap">
+
+    <p id="c-load" class="lead">Carregando…</p>
+
+    <!-- 1. Sem login -->
+    <section id="c-gate" hidden>
+      <h1>Suporte por chat</h1>
+      <p class="lead chat-lead">Entre na sua conta para iniciar um pedido de suporte.</p>
+      <button type="button" class="btn btn-primary chat-cta" id="c-login">Entrar</button>
+    </section>
+
+    <!-- 2. Logado: iniciar pedido -->
+    <section id="c-start" hidden>
+      <h1>Inicie um Pedido de Suporte</h1>
+      <p class="lead chat-lead">Olá, <span id="c-name"></span>. Ao iniciar, você conversa em tempo real com a equipe da Ticord.</p>
+      <button type="button" class="btn btn-primary btn-lg chat-cta" id="c-begin">Iniciar</button>
+      <p class="auth-msg" id="c-start-msg" role="alert"></p>
+      <p class="chat-warn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.01"/></svg>
+        <span>Isso não é salvo, nenhum banco de dados é conectado com esse chat, não saia da página.</span>
+      </p>
+    </section>
+
+    <!-- 3. Chat -->
+    <section id="c-chat" hidden>
+      <div class="chat-box">
+        <div class="chat-bar">
+          <div class="chat-who">
+            <span class="chat-dot" id="c-dot"></span>
+            <div>
+              <p class="chat-title">Suporte Ticord</p>
+              <p class="chat-status" id="c-status">Conectando…</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm" id="c-leave">Encerrar</button>
+        </div>
+
+        <div class="chat-log" id="c-log" role="log" aria-live="polite" aria-label="Mensagens do chat"></div>
+
+        <p class="chat-foot-warn">Nada é salvo. Ao sair da página, a conversa some.</p>
+
+        <form class="chat-compose" id="c-form" autocomplete="off">
+          <textarea class="chat-input" id="c-input" rows="1" maxlength="2000" placeholder="Escreva sua mensagem" aria-label="Sua mensagem" disabled></textarea>
+          <button type="submit" class="btn btn-primary btn-sm" id="c-send" disabled>Enviar</button>
+        </form>
+
+        <div class="chat-over" id="c-over" hidden>
+          <span>Este atendimento foi finalizado.</span>
+          <button type="button" class="btn btn-primary btn-sm" id="c-new">Novo pedido</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/script.js"></script>
+<script src="js/chat-core.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/interact.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página Inicial</title>
+<meta name="description" content="A Ticord é um grupo que administra, organiza e desenvolve empresas e projetos digitais.">
+<link rel="icon" href="assets/ticord.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== CABEÇALHO (igual em todas as páginas) ===================== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Ticord — página inicial">
+      <!-- Logo principal da Ticord (trocar arquivo em assets/ticord.png) -->
+      <img src="assets/ticord.png" alt="Ticord">
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="apoio.html">Apoio</a>
+    </nav>
+
+    <div class="auth-slot" data-auth-slot></div>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Início</a>
+  <a href="sobre.html">Sobre</a>
+  <a href="projetos.html">Projetos</a>
+  <a href="apoio.html">Apoio</a>
+  <a class="btn btn-primary" href="https://apoio.ticord.website" target="_blank" rel="noopener">Central de apoio</a>
+</div>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <!-- Texto de abertura: pode ser editado livremente -->
+        <h1>Um grupo que <span class="accent">conecta</span>, administra e desenvolve projetos digitais.</h1>
+        <p class="lead">
+          A Ticord reúne empresas e iniciativas que atuam no ecossistema do Roblox e em
+          projetos digitais, cuidando da administração, da organização e do
+          desenvolvimento de cada uma delas.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="projetos.html">Conhecer os projetos</a>
+          <a class="btn btn-ghost" href="apoio.html">Apoio</a>
+        </div>
+      </div>
+
+      <!-- Marcas em destaque. Para adicionar uma marca aqui, copie um bloco .brand-cell.
+           O ideal é manter um número par de blocos para a grade ficar alinhada. -->
+      <div class="brand-grid">
+        <a class="brand-cell" href="projetos.html">
+          <img src="assets/fun.png" alt="Fun">
+          <div>
+            <strong>Fun</strong>
+            <span>Entretenimento e eventos</span>
+          </div>
+        </a>
+        <a class="brand-cell" href="projetos.html">
+          <img src="assets/cord.png" alt="Cord">
+          <div>
+            <strong>Cord</strong>
+            <span>Bots e sistemas</span>
+          </div>
+        </a>
+        <a class="brand-cell" href="projetos.html">
+          <img src="assets/wow.png" alt="Wow">
+          <div>
+            <strong>Wow</strong>
+            <span>Marketing e divulgação</span>
+          </div>
+        </a>
+        <a class="brand-cell" href="projetos.html">
+          <img src="assets/shopping-mall.png" alt="Shopping Mall Roblox">
+          <div>
+            <strong>Shopping Mall Roblox</strong>
+            <span>Experiência no Roblox</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== O QUE A TICORD FAZ ===================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>O papel do grupo</h2>
+        <p class="lead">
+          Cada projeto tem seu próprio público e sua própria identidade. A Ticord é a
+          estrutura que mantém todos eles funcionando com o mesmo padrão.
+        </p>
+      </div>
+
+      <!-- Para editar os tópicos abaixo, altere ou duplique um bloco .row -->
+      <div class="rows">
+        <div class="row">
+          <h3>Administração</h3>
+          <p>
+            Gestão das marcas do grupo, acompanhamento das equipes e das decisões que
+            envolvem cada projeto.
+          </p>
+        </div>
+        <div class="row">
+          <h3>Desenvolvimento</h3>
+          <p>
+            Criação e manutenção das soluções técnicas usadas pelos projetos, de sistemas
+            e bots a experiências dentro do Roblox.
+          </p>
+        </div>
+        <div class="row">
+          <h3>Organização</h3>
+          <p>
+            Processos, padrões e canais de atendimento comuns, para que quem usa qualquer
+            projeto encontre sempre o mesmo nível de suporte.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJETOS EM DESTAQUE ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Marcas administradas pela Ticord</h2>
+        <p class="lead">
+          Projetos ativos hoje sob a administração do grupo. A página de projetos traz a
+          descrição completa e o acesso a cada um.
+        </p>
+      </div>
+
+      <div class="structure">
+        <div class="structure-top">
+          <img src="assets/ticord.png" alt="Ticord">
+          <span>administra as marcas abaixo</span>
+        </div>
+
+        <!-- Para adicionar uma marca, copie um bloco .structure-item -->
+        <div class="structure-list">
+          <div class="structure-item">
+            <img src="assets/fun.png" alt="Fun">
+            <strong>Fun</strong>
+            <span>Entretenimento</span>
+          </div>
+          <div class="structure-item">
+            <img src="assets/cord.png" alt="Cord">
+            <strong>Cord</strong>
+            <span>Tecnologia</span>
+          </div>
+          <div class="structure-item">
+            <img src="assets/wow.png" alt="Wow">
+            <strong>Wow</strong>
+            <span>Marketing</span>
+          </div>
+          <div class="structure-item">
+            <img src="assets/shopping-mall.png" alt="Shopping Mall Roblox">
+            <strong>Shopping Mall Roblox</strong>
+            <span>Roblox</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-row" style="margin-top:40px">
+        <a class="btn btn-ghost" href="projetos.html">Ver todos os projetos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAMADA PARA O APOIO ===================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Precisa de ajuda com algum projeto do grupo?</h2>
+          <p>A central de apoio atende usuários, clientes e membros das marcas da Ticord.</p>
+        </div>
+        <a class="btn btn-primary btn-lg" href="apoio.html">Ir para o apoio</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== RODAPÉ (igual em todas as páginas) ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/ticord.png" alt="Ticord">
+        <p>
+          Grupo responsável pela administração, organização e desenvolvimento das
+          empresas e projetos apresentados neste site.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="apoio.html">Apoio</a></li>
+          <li><a href="administracao.html">Administração</a></li>
+        </ul>
+      </div>
+
+      <!-- Links dos projetos com site. Ao adicionar um novo projeto com site, inclua aqui também. -->
+      <div class="footer-col">
+        <h4>Projetos</h4>
+        <ul>
+          <li><a href="https://entretenimento.fun" target="_blank" rel="noopener">Fun</a></li>
+          <li><a href="https://cordbots.fun" target="_blank" rel="noopener">Cord</a></li>
+          <li><a href="https://helpwow.site" target="_blank" rel="noopener">Wow</a></li>
+          <li><a href="https://apoio.ticord.website" target="_blank" rel="noopener">Central de apoio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="reembolso.html">Política de Reembolso</a></li>
+          <li><a href="cancelamento.html">Política de Cancelamento</a></li>
+          <li><a href="arrependimento.html">Direito de Arrependimento</a></li>
+          <li><a href="contato.html">Contato / Atendimento</a></li>
+          <li><a href="empresa.html">Informações da Empresa</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span class="year">2026</span> Ticord. Todos os direitos reservados.</span>
+      <span>Os projetos apresentados são administrados pela Ticord.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/auth.js"></script>
+<script src="js/script.js"></script>
+<script src="js/interact.js"></script>
+</body>
+</html>

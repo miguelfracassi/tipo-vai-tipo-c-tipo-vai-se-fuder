@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Planos — andfopportunity.com</title>
+<link rel="icon" href="assets/ticord.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-plan="anual">
+
+<!-- Página escondida: não está no menu, no rodapé nem em nenhuma outra página -->
+<header class="site-header is-scrolled">
+  <div class="container header-inner">
+    <span class="brand"><img src="assets/ticord.png" alt="Ticord"></span>
+    <button type="button" class="auth-btn" id="logout" hidden>Sair</button>
+  </div>
+</header>
+
+<main class="dash">
+  <div class="container">
+
+    <p id="v-load" class="lead">Carregando…</p>
+
+    <!-- 1. Entrar ou criar conta -->
+    <section id="v-auth" hidden>
+      <h1>Acesse sua conta</h1>
+      <p class="lead" style="margin-top:20px">Entre com seu email e senha ou crie uma conta para continuar.</p>
+      <form id="f" class="auth-form" style="max-width:420px" novalidate>
+        <div class="auth-row" id="signup-only">
+          <label class="auth-field">Primeiro nome<input name="first" type="text" autocomplete="given-name" required></label>
+          <label class="auth-field">Sobrenome<input name="last" type="text" autocomplete="family-name" required></label>
+        </div>
+        <label class="auth-field">Email<input name="email" type="email" autocomplete="email" required></label>
+        <label class="auth-field">Senha<input name="password" type="password" minlength="8" required></label>
+        <p class="auth-msg" id="auth-msg" role="alert"></p>
+        <button type="submit" class="btn btn-primary" id="auth-submit">Entrar</button>
+      </form>
+      <p class="auth-switch"><span id="switch-text"></span> <button type="button" class="link-quiet" id="switch-btn"></button></p>
+    </section>
+
+    <!-- 2. Escolha do plano -->
+    <section id="v-plan" hidden>
+      <h1 id="hello"></h1>
+      <p class="lead" id="sub" style="margin-top:20px"></p>
+      <div class="plan-card">
+        <h2>Anual</h2>
+        <p class="lead">Adquira o plano com criação de site + domínio personalizado e suporte contínuo até o fim do plano</p>
+        <p class="plan-price">R$60<span>/anual</span></p>
+        <button type="button" class="btn btn-primary btn-lg" id="pay">Pagar com Pix</button>
+        <p class="auth-msg" id="pay-msg" role="alert" style="margin-top:14px"></p>
+      </div>
+    </section>
+
+    <!-- 3. Pix -->
+    <section id="v-pix" hidden>
+      <h1>Pague com Pix</h1>
+      <p class="lead" style="margin-top:20px">Escaneie o QR Code ou use o Pix copia e cola. A confirmação é automática.</p>
+      <div class="pix-box">
+        <div class="pix-qr-wrap" id="qr-wrap">
+          <span class="pix-qr-badge">Pix</span>
+          <img id="qr" class="pix-qr" alt="QR Code Pix">
+        </div>
+        <div>
+          <p class="dash-label" style="margin-top:0">Pix copia e cola</p>
+          <textarea id="code" class="pix-code" rows="5" readonly></textarea>
+          <button type="button" class="btn btn-ghost" id="copy">Copiar código</button>
+          <p class="pix-waiting"><span class="dot"></span> Aguardando o pagamento… não feche esta página.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Pago / já tem plano -->
+    <section id="v-done" hidden>
+      <h1 id="done-title"></h1>
+      <p class="lead" id="done-text" style="margin:20px 0 32px"></p>
+      <a class="btn btn-primary" href="dashboard.html">Ir para o dashboard</a>
+    </section>
+
+  </div>
+</main>
+
+<script src="js/plano.js"></script>
+<script src="js/interact.js"></script>
+</body>
+</html>
